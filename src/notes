@@ -91,3 +91,9 @@ Table of content
     Very useful when we want to run a code in every render 
 
 15. useEffect Dependancies 
+    we have seen that useEffect fires after every render but we don't want that.. 
+    thats y we introduce Dependancies.... to fire only at certain situation 
+    empty array Dependancies makes the function run only once. [] ie.. first initial render 
+
+16. JSON Server
+    allows us to build a fake rest api
