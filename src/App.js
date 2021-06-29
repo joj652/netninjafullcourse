@@ -1,10 +1,16 @@
 
-import './App.css';
+import Navbar from './Navbar';
+import Home from './Home';
 
 function App() {
+  
   return (
     <div className="App">
-      <h2>vwgvgasd</h2>
+
+      <Navbar />
+      <div className="content">
+        <Home />
+      </div>
     </div>
   );
 }

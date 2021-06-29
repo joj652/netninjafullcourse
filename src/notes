@@ -4,3 +4,78 @@ Table of content
     What is react?
     Javascript library used to create website.
     Allows us to easily create Single Page Apps (SPA)
+
+2. Creating a react application 
+
+3. Components and templates 
+    components are the building blocks of react application 
+    eg Nav bar ,article, sidebar etc... 
+    its our job to create this components 
+
+    each component will contain its own
+        .Template .. this is the html of the content 
+        .logic ... eg function that runs when a button is clicked 
+
+4. Dynamic values in templates(html)
+    prevent hard coding thus improving reusability
+
+5. Multiple components 
+    App component is the root of our component
+
+6. Adding css
+
+7. Click Events 
+    create a button that invoked a function when clicked.
+
+    event object or event parameter(e)
+
+
+    const handleClick = (e)=>{
+        console.log("Hello, Ninjas", e);
+        // alert("Hello Ninjas")
+    }
+
+    const handleClickAgain = (name, e) =>
+    {
+        console.log("hello " + name , e.target);
+        // alert("hello " + name)
+    }
+
+     <div className="home">
+            <h2>HomePage</h2>
+            {/* we dont add the brackets because it will invoke the function even
+            before we have clicked the button  */}
+            <button onClick = {handleClick} >Click Me</button>
+
+            {/* if you want to pass parameter to function without activating it unintentionally we do this */}
+            <button onClick={(e) => handleClickAgain("Mario", e)}>Click Me Again</button>
+
+        </div>
+
+8. useState
+
+    use to make a value reactive.. react will watch the value for changes the rerenders the tamplete
+    with that new value.
+    we use a hook know as useState to perform this
+    can be used with any data type
+
+9. Intro to react dev tools 
+    chrome / firefox extensions 
+    give us extra info about react based project(website)
+
+10. Outputing list 
+    using map function to output list of data.
+
+    <div className="home">
+            {blogs.map((blog) => (
+                <div className="blog-preview" key = {blog.id}>
+                    <h2>{ blog.title }</h2>
+                    <p>Written by {blog.author}</p>
+                </div>
+            ))}
+        </div>
+
+11. Props 
+    enables reusing of code.. you just pass parameters (props) to the component that you want and renders out result 
+    without having to rewrite the component
+    
