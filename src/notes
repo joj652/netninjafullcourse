@@ -78,4 +78,16 @@ Table of content
 11. Props 
     enables reusing of code.. you just pass parameters (props) to the component that you want and renders out result 
     without having to rewrite the component
-    
+
+12. Reusing Components
+    using same component to output different data 
+
+13. Functions as props
+
+14. useEffect hook
+    runs a function every render of a component. 
+    fires in every render
+    we pass a function the useEffect so that it can run during rendering 
+    Very useful when we want to run a code in every render 
+
+15. useEffect Dependancies 
