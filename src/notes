@@ -49,6 +49,8 @@ Table of content
 
             {/* if you want to pass parameter to function without activating it unintentionally we do this */}
             <button onClick={(e) => handleClickAgain("Mario", e)}>Click Me Again</button>
+            {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Mario's blogs!" handleDelete = {handleDelete} /> */}
+            
 
         </div>
 
@@ -97,3 +99,70 @@ Table of content
 
 16. JSON Server
     allows us to build a fake rest api
+
+17. Fetching data with useEffect 
+
+    useEffect(()=> {
+        console.log('use effect ran');
+        fetch("http://localhost:8000/blogs")
+        .then(res =>{
+           return res.json();
+        })
+        .then((data => {
+            setBlogs(data);
+        }))
+       
+    },[])
+
+
+    {/* //first check if blog has data .. if null means false */}
+            {blogs && <BlogList blogs={blogs} title="All Blogs!" />}
+
+18. conditional Loading message
+    display loading while fetching 
+
+    we use a state... we set it first to true.. then when data is receive we set it to false 
+
+    const [isPending, setIsPending] = useState(true);
+
+    {isPending && <div> Loading ... </div>}
+
+19. Handling Fetch Errors
+    handle any kind of error when we try to fetch.. it can be error sent from server or
+    connection error to connect to server etc
+
+    useEffect(() => {
+        console.log('use effect ran');
+        fetch("http://localhost:8000/blogs")
+            .then(res => {
+                if (!res.ok) {
+                    throw Error('Could not fetch data for that resourse')
+                }
+                return res.json();
+            })
+            .then(data => {
+                setBlogs(data);
+                setIsPending(false)
+                setError(null)
+            })
+            .catch(err => {
+                setIsPending(false);
+                setError(err.message);
+                console.log(err.message);
+
+            })
+
+    }, [])
+
+    <div className="home">
+            {error && <div>{error}</div>}
+            {isPending && <div> Loading ... </div>}
+            {/* //first check if blog has data .. if null means false */}
+            {blogs && <BlogList blogs={blogs} title="All Blogs!" />}
+        </div>
+
+
+20. Making custom Hooks
+    enable reusing code .. eg useEffect 
+    custom Effect in react need to start with the word "use....." eg useEffect
+    nice stuff....
