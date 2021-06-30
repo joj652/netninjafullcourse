@@ -7,8 +7,9 @@ const useFetch = (url) => {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        console.log('use effect ran');
-        fetch(url)
+        const abortCont = new AbortController();
+
+        fetch(url, { signal: abortCont.signal })
             .then(res => {
                 if (!res.ok) {
                     throw Error('Could not fetch data for that resource')
@@ -21,15 +22,22 @@ const useFetch = (url) => {
                 setError(null)
             })
             .catch(err => {
-                setIsPending(false);
-                setError(err.message);
-                console.log(err.message);
+                if (err.name === "AbortError") {
+                    console.log('fetch aborted')
+                } else {
+                    setIsPending(false);
+                    setError(err.message);
+                    console.log(err.message);
+                }
+
 
             })
 
+        return () => abortCont.abort()//it aborts whatever fetch it is associated with 
+
     }, [url]) //when url changes it will rerun to fetch data for that end point 
 
-    return {data, isPending, error}
+    return { data, isPending, error }
 }
 
 export default useFetch;

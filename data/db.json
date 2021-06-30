@@ -1,16 +1,10 @@
 {
-    "blogs": [
-        {
-            "title": "My new website",
-            "body": "lorem ipsum...lorem ipsum...lorem ipsum...lorem ipsum...lorem ipsum...lorem ipsum...",
-            "author": "mario",
-            "id": 1
-        },
-        {
-            "title": "Opening Party!",
-            "body": "lorem ipsum...lorem ipsum...lorem ipsum...lorem ipsum...lorem ipsum...lorem ipsum...",
-            "author": "yoshi",
-            "id": 2
-        }
-    ]
+  "blogs": [
+    {
+      "title": "Word Plays",
+      "body": "The Crossword Dictionary explains the answers for the crossword clue 'Relaxed dipping into Milan guidebook (7)'. If more than one Crossword Definition exists for a clue they will all be shown below. Links to Crossword Dictionary entries can be found when searching for clues using the Crossword Solver - Relaxed dipping into Milan guidebook (7)",
+      "author": "yoshi",
+      "id": 1
+    }
+  ]
 }

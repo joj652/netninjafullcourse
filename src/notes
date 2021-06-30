@@ -166,3 +166,56 @@ Table of content
     enable reusing code .. eg useEffect 
     custom Effect in react need to start with the word "use....." eg useEffect
     nice stuff....
+
+21. The react Router 
+    this prevents sending web pages back and forth  from server.
+
+    First thing is you have to install new react package
+
+    Switch makes sure that only one route is show at a particular time 
+
+22. exact match Route
+    We use the exact key word in Route to make the router not confuse route... 
+     Switch component ensures that only one component is show at any particular time 
+     if we don't use switch the we can render many components at the same time
+
+
+23. Router Links 
+
+    prevent the send request to the server every time we want to load a page.
+
+24. useEffect Cleanup
+    When we use the Link tag, the use Effect in the home tries to render the home page while we 
+    have already moved to another page.. this gives us a warning. 
+    (can't perfrom a react state update on an unmounted component)
+    to combat this, we use useEffect cleanup.
+    we need a method to stop useEffect when the component unmounts
+    will use useEffect hook and aborter in java 
+
+25. Route parameters
+    some times we want to pass dynamic value as part of route
+    eg /blog/123  where 123 is the id of the blog we want to see.
+
+26. Reusing our custom hook useFetch to retrive specific blogs
+
+27. controlled input (forms)
+    adding user's blog
+    controllled input is a way in react of setting input fields in form and track there value in state.
+    to keep track of what the user types will use state
+
+28. submit event (submitting a form)
+
+    then you will create a blog object that will be saved in your db
+    we dont need to create an id because this will be done automatically 
+
+29. Making a POST request
+    after creating the object, lets send this to server using the POST request
+
+30. Programmatic Redirects
+    redirect user after action has happened
+    we use another hook called useHistory.. allow user to go back and forward through history and also add a new page
+
+31. Deleting blogs (DELETE Request)
+
+32. Setting up a 404 Page is a url doesnt exist 
+    
